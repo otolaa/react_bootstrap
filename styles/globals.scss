@@ -1,0 +1,21 @@
+html{ position: relative; min-height: 100%; }
+html, body { font-size:16px; } 
+
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+body {
+    & > div#__next{
+        padding-top: 3.5rem;
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        // background-color: $background-color;
+        // color: $font-color;
+    }
+}
+
+main[role='main']{ flex: 1; padding-bottom: 0px; }
+
+/* Footer */
+footer { width: 100%; text-transform: uppercase; background-color: rgb(248, 249, 250);
+    & > .container { padding-top: 20px; padding-bottom: 15px; color: rgb(33, 37, 41); }
+}
