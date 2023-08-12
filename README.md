@@ -36,3 +36,5 @@ const nextConfig = {
   },
 }
 ```
+
+![scrin](https://github.com/otolaa/react_bootstrap/blob/main/public/img/scrin.png "scrin")

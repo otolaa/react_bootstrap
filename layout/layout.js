@@ -53,10 +53,10 @@ function Layout (props) {
                     </Offcanvas.Header>
 
                     <Offcanvas.Body>
-                        <Nav className={'mx-auto mb-3 mb-lg-0'}>
-                            <Nav.Link href="/#home">Home</Nav.Link>
-                            <Nav.Link href="/#features">Features</Nav.Link>
-                            <Nav.Link href="/#pricing">Pricing</Nav.Link>
+                        <Nav className={'mx-auto mb-3 mb-lg-0'}>       
+                            <Nav.Link href="//react-bootstrap.netlify.app/docs/getting-started/introduction" target="_blank">Getting Started</Nav.Link>
+                            <Nav.Link href="//react-bootstrap.netlify.app/docs/components/accordion" target="_blank">Components</Nav.Link>
+                            <Nav.Link href="//icons.getbootstrap.com/" target="_blank">Icons</Nav.Link>
                         </Nav>
                         <Form inline onSubmit={formSearchSubmit}>
                             <InputGroup>            
