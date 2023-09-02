@@ -44,7 +44,7 @@ export default function HomeIndex() {
 
   const getCur = (v, p) => {
     let vp = v-p
-    return vp > 0 ? `+${vp.toFixed(2)}`:`-${vp.toFixed(2)}`
+    return vp > 0 ? `+${vp.toFixed(2)}`:`${vp.toFixed(2)}`
   }
 
   const getDataFormat = (dt) => {

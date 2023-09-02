@@ -3,10 +3,14 @@ import Head from "next/head"
 import Image from 'next/image'
 import styles from './Layout.module.scss'
 import {Container, Nav, Navbar, Form, Row, Col, Button, InputGroup, NavDropdown, Offcanvas} from 'react-bootstrap'
-import { Search } from 'react-bootstrap-icons'
+import { Search, MoonFill, SunFill } from 'react-bootstrap-icons'
 import Jumbotron from '../components/Jumbotron/Jumbotron'
+import { Context } from "../pages/_app"
 
 function Layout (props) {
+
+    const apiContext = useContext(Context)
+    console.log(apiContext.theme)
 
     const formSearchSubmit = async (e) =>  {
         e.preventDefault()
@@ -68,6 +72,11 @@ function Layout (props) {
                                 <Button type="submit" variant="secondary"><Search /></Button>              
                             </InputGroup>
                         </Form>
+                        <div className="ms-4">
+                            <Button variant="dark" onClick={() => apiContext.setTheme({...(apiContext?.theme.iconTheme==='SunFill'?apiContext.themes.light:apiContext.themes.dark)})}>
+                                {apiContext.theme.iconTheme==='SunFill'?<SunFill />:<MoonFill/>}
+                            </Button>
+                        </div>
                     </Offcanvas.Body>
 
                 </Navbar.Offcanvas>
@@ -80,7 +89,9 @@ function Layout (props) {
             {props.children}
         </main>
 
-        <footer><Container key={'f0'}>&copy; I ❤ Bootstrap && React</Container></footer>
+        <footer style={{backgroundColor:apiContext.theme?.background, color:apiContext.theme?.foreground}}>
+            <Container key={'f0'}>&copy; I ❤ Bootstrap && React</Container>
+        </footer>
     </>)
 }
 
