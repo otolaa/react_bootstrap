@@ -10,7 +10,7 @@ import { Context } from "../pages/_app"
 function Layout (props) {
 
     const apiContext = useContext(Context)
-    console.log(apiContext.theme)
+    //console.log(apiContext.theme)
 
     const formSearchSubmit = async (e) =>  {
         e.preventDefault()
@@ -31,7 +31,7 @@ function Layout (props) {
             <link rel="shortcut icon" href="/favicon.ico"/>
         </Head>
 
-        <Navbar bg="dark" data-bs-theme="dark" fixed="top" key={expand} expand={expand}>
+        <Navbar bg={apiContext?.theme?.themeName} data-bs-theme={apiContext?.theme?.themeName} fixed="top" key={expand} expand={expand}>
             <Container key={'n'} fluid>
                 <Navbar.Brand href="/#home">
                     <Image
@@ -73,7 +73,7 @@ function Layout (props) {
                             </InputGroup>
                         </Form>
                         <div className="ms-4">
-                            <Button variant="dark" onClick={() => apiContext.setTheme({...(apiContext?.theme.iconTheme==='SunFill'?apiContext.themes.light:apiContext.themes.dark)})}>
+                            <Button variant={apiContext?.theme?.themeName} onClick={() => apiContext.setTheme({...(apiContext?.theme.iconTheme==='SunFill'?apiContext.themes.light:apiContext.themes.dark)})}>
                                 {apiContext.theme.iconTheme==='SunFill'?<SunFill />:<MoonFill/>}
                             </Button>
                         </div>

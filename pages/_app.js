@@ -31,8 +31,8 @@ export default function App({ Component, pageProps }) {
   //console.log(repos)
 
   const themes = {
-    light: {foreground: '#212529', background: '#F8F9FA', iconTheme:'MoonFill'},
-    dark: {foreground: '#ffffff', background: '#212529', iconTheme:'SunFill'},
+    light: {foreground: '#212529', background: '#F8F9FA', iconTheme:'MoonFill', themeName:'light',},
+    dark: {foreground: '#ffffff', background: '#212529', iconTheme:'SunFill', themeName:'dark',},
   }
 
   const [theme, setTheme] = useState(themes?.dark)
