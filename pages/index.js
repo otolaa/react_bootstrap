@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import BreadcrumbExample from '../components/BreadcrumbExample/BreadcrumbExample'
 import {Row, Col, Container, Alert, Button, Card, ListGroup, Table, Badge} from 'react-bootstrap'
-import { HeartFill, CupHotFill, Boxes, ExclamationCircleFill, CurrencyExchange } from 'react-bootstrap-icons'
+import { HeartFill, CupHotFill, Boxes, ExclamationCircleFill, CurrencyExchange, MapFill } from 'react-bootstrap-icons'
 
 export default function HomeIndex() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -52,13 +52,6 @@ export default function HomeIndex() {
     return `${date.toLocaleString('default', { day: 'numeric', month: 'numeric', year: 'numeric' })}, ${date.getHours()}:${date.getMinutes()}`
   }
 
-  /*if (isLoaded) {
-    console.log(cbrJson)
-    Object.keys(cbrJson.Valute).filter(k=>['USD','EUR','PLN','KZT'].indexOf(k) >= 0).map(i=>(
-      console.log(cbrJson.Valute[i])
-    ))
-  }*/
-
   return (
     <>
       <Head>
@@ -89,10 +82,7 @@ export default function HomeIndex() {
               <td>{getCur(cbrJson.Valute[i].Value, cbrJson.Valute[i].Previous)}</td>
             </tr>))}</tbody></Table>)}
 
-            {/*<Alert key={variant[2]} variant={variant[2]} onClose={() => setShow2(false)} dismissible>
-              <Alert.Heading>Hey, nice to see you</Alert.Heading>
-              This is a {variant[2]} alert—check it out!
-            </Alert>*/}
+            {/* <h2 className='h2'><MapFill/> The map</h2> */}
           </Col>
           
           <Col sm={12} md={4} lg={4}>
@@ -111,12 +101,7 @@ export default function HomeIndex() {
               <CupHotFill/> Icon have is&nbsp;<Alert.Link href="//icons.getbootstrap.com" target='_blank'>react-bootstrap-icons</Alert.Link>
             </Alert>
 
-            <Card
-             bg={variant[6].toLowerCase()}
-             key={variant[6]}
-             text={variant[6].toLowerCase() === 'light' ? 'dark' : 'white'}
-             className="mb-3"
-            >
+            <Card className="mb-3">
               <Card.Body>
                 <Card.Title>Weather block</Card.Title>
                 <Card.Text>This is some text within a card body, from Weather text block</Card.Text>

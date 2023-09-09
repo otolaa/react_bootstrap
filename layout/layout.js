@@ -1,4 +1,4 @@
-import React, {useContext} from "react"
+import React, {useContext, useEffect} from "react"
 import Head from "next/head"
 import Image from 'next/image'
 import styles from './Layout.module.scss'
@@ -18,6 +18,15 @@ function Layout (props) {
 
     /* 'sm', 'md', 'lg', 'xl', 'xxl' */
     const expand = 'lg'
+
+    const setThemes = (e) => {
+        apiContext.setTheme({...(apiContext?.theme.iconTheme==='SunFill'?apiContext.themes.light:apiContext.themes.dark)})
+    }
+
+    useEffect(() => {
+        let html_ = document.querySelector("html");
+        html_.setAttribute("data-bs-theme", apiContext?.theme.themeName);
+    }, [apiContext?.theme.themeName])
 
     return (
     <>
@@ -73,7 +82,7 @@ function Layout (props) {
                             </InputGroup>
                         </Form>
                         <div className="ms-4">
-                            <Button variant={apiContext?.theme?.themeName} onClick={() => apiContext.setTheme({...(apiContext?.theme.iconTheme==='SunFill'?apiContext.themes.light:apiContext.themes.dark)})}>
+                            <Button variant={apiContext?.theme?.themeName} onClick={setThemes}>
                                 {apiContext.theme.iconTheme==='SunFill'?<SunFill />:<MoonFill/>}
                             </Button>
                         </div>

@@ -13,9 +13,11 @@ body {
     }
 }
 
-main[role='main']{ flex: 1; padding-bottom: 0px; }
+main[role='main']{ flex: 1; padding-bottom: 2rem; }
+
+nav.navbar{  border-bottom: 1px dashed var(--bs-secondary-border-subtle); }
 
 /* Footer */
-footer { width: 100%; text-transform: uppercase; /*background-color: rgb(248, 249, 250);*/
-    & > .container { padding-top: 20px; padding-bottom: 15px; /*color: rgb(33, 37, 41);*/ }
+footer { width: 100%; text-transform: uppercase; border-top: 1px dashed var(--bs-secondary-border-subtle);
+    & > .container { padding-top: 20px; padding-bottom: 15px; }
 }
